@@ -15,6 +15,7 @@ and open the template in the editor.
 
         $students = array();
         
+        //Sample students
         $first = new Student();
         $first->surname = "Doe";
         $first->first_name = "John";
@@ -36,6 +37,10 @@ and open the template in the editor.
         $second->add_grade(50);
         $students['a456'] = $second;
         
+        //sort students
+        ksort($students);
+        
+        //print students
         foreach($students as $student)
             echo $student->toString();
 
