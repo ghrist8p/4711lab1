@@ -36,10 +36,15 @@ class Student {
     }
     
     function toString() {
-        $result = $this->first_name . ' ' . $this->surname;
-        $result .= ' ('.$this->average().")\n";
+        $result = '<table border="1">';
+        $result .= '<tr><th align="right">';
+        $result .= $this->first_name . ' ' . $this->surname;
+        $result .= '</th><th align="left">';
+        $result .= 'average: '.$this->average()."%";
+        $result .= '</th></tr>';
         foreach($this->emails as $which=>$what)
-            $result .= $which . ': '. $what. "\n";
+            $result .= '<tr><th align="right">'.$which . '</th><th align="left">'. $what. "</th></tr>";
+        $result .= '</table>';
         $result .= "\n";
         return '<pre>'.$result.'</pre>';
     }
